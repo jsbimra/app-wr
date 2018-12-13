@@ -1,0 +1,108 @@
+.money-container {
+    /* border: 1px solid red; */
+}
+
+.money-container h4{
+    margin: 0;
+    margin-bottom: 10px;
+}
+.money-tray {
+    padding: 0;
+    margin: 0 0 30px;
+    overflow: hidden;
+}
+
+.money-pot {
+    clear: both;
+    border: 1px solid blue;
+    width: 300px;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    margin: 80px auto 0;
+    z-index: 2;
+}
+.money-pot:after{
+    content:'';
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: top 2.4s;
+}
+
+.money-pot.reveal-pot:after {
+    top: -355px;
+}
+
+.money-pot .coin, .money-pot .bill {
+    position: absolute;
+    bottom:0;
+}
+
+.coins-wrapper{
+    float: left;
+}
+
+.bills-wrapper{
+    float: right;
+}
+
+.bill{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    height: 20px;
+    background-color: rgb(0, 255, 106);
+    margin-left: 10px;
+    margin-top: 15px;
+    transition: margin-top;
+}
+
+.bills-wrapper .bill:hover {
+    animation: shakeBills .6s alternate;
+}
+
+@-webkit-keyframes shakeBills {
+    0%   { margin-top: 15px;}
+    50%  { margin-top: 12px;}
+    100% { margin-top: 10px;}
+}
+@keyframes shakeBills {
+    0%   { margin-top: 15px;}
+    50%  { margin-top: 12px;}
+    100% { margin-top: 10px;}
+}   
+
+.coin{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: gold;
+    margin-right: 10px
+}
+
+.coins-wrapper .coin:hover {
+    animation: flipCoin .9s forwards;
+}
+
+@-webkit-keyframes flipCoin {
+    0%   { transform: rotateY(0deg);}
+    50%  { transform: rotateY(180deg);}
+    100% { transform: rotateY(360deg);}
+}
+@keyframes flipCoin {
+    0%   { transform: rotateY(0deg);}
+    50%  { transform: rotateY(180deg);}
+    100% { transform: rotateY(360deg);}
+}   

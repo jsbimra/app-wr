@@ -6,7 +6,7 @@ class Header extends Component {
     render() {
         return (
             <header className="header">
-                <Link to="/" className="text-center inline-block"><img src={this.props.logo} /> <br />{this.props.slogan}</Link>
+                <Link to="/" className="text-center inline-block"><img src={this.props.logo} alt="site-logo" /> <br />{this.props.slogan}</Link>
                 <Nav />
             </header>
         )

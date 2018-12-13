@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react'
+import './Social.css';
 
 const ErrorMessage = (props) => {
     console.log(props.msg)
@@ -12,9 +13,9 @@ const SocialBlock = (props) => {
     console.log(props);
     return props.buildBlocks.map((value, index) => {
         // console.log(value);  
-        if(value){
+        if(value) {
             return (
-                <div className="relative float-left" key={index} >
+                <div className="relative float-left " key={index} >
                     <a href="#" className="social-delete-link" onClick={()=> {props.onDelete(value)} }>x</a>
                     
                     <Link to="/social" className={`float-left social-block ${'social-block-' + value.toLowerCase()}`}>

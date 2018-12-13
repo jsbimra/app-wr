@@ -1,0 +1,58 @@
+
+     .social-content {
+        clear: both;
+        overflow: hidden;
+     }
+     .social-form-panel{
+        margin-bottom: 20px; 
+        float: right;
+      }
+     .social-form-panel select {
+        width: 250px; 
+        margin:0;
+        margin-right: 20px;
+    }
+    .social-form-panel button {
+      margin:0;
+    }
+
+    .social-block {
+        width: 200px;
+        min-height: 200px;
+        margin: 20px;
+        border-radius: 50%;        
+        box-sizing: border-box;
+        /* border: 1px solid #aa162a; */
+        text-align: center;
+        line-height: 200px;
+        position:relative;
+        z-index: 5;
+    }
+    .social-block span {
+      display: inline-block;
+      line-height: normal;
+      padding: 4px 8px;
+      background-color: rgb(85, 85, 85);
+      color: rgb(255, 255, 255);
+    }
+    .social-block:after{
+        content: '';
+        position: absolute;
+        /* background: #e7b11c; */
+        z-index: -1;
+        top:0;
+        right:0;
+        display: block;
+        width: 200px; /* try with inherit value for width height and raduis you will get kind of submarine */
+        height: 200px;
+        border-radius: 50%;        
+        box-sizing: border-box;
+        border: 25px dashed #eccb11;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation: wheelSpinAnimate 6s infinite forwards;
+    } 
+    .social-delete-link {
+      position: absolute;
+      top: 23px;
+      right: 35px;
+    }

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import React, {Component} from 'react';
 
-const NavList = ['Home', 'About', 'Social', 'Feedback'];
+const NavList = ['Home', 'Money', 'Social', 'Feedback'];
 
 class Nav extends Component {
     createListNav() {
