@@ -10,37 +10,81 @@
     padding: 0;
     margin: 0 0 30px;
     overflow: hidden;
+    clear: both;
 }
 
 .money-pot {
     clear: both;
-    border: 1px solid blue;
-    width: 300px;
-    height: 350px;
+    border-width: 0 1px 3px;
+    border-style: solid;
+    border-color: #c7c6c6;
+    width: 360px;
+    height: 400px;
     position: relative;
-    overflow: hidden;
-    margin: 80px auto 0;
+    /* overflow: hidden; */
+    margin: 60px auto;
     z-index: 2;
+    border-radius: 35% 35% 20% 20%;
+    box-shadow: 0px 10px 10px -5px rgba(189,187,189,1);
+}
+.money-pot:before{
+    content: '';
+    background-color: black;
+    width: 42%;
+    height: 28px;
+    position: relative;
+    border-width: 0 1px 3px;
+    border-style: solid;
+    border-color: #353030;
+    z-index: 5;
+    margin: 0 auto;
+    display: block;
+    top: -28px;
+    left: auto;
+    right: auto;
+    
+    border-width: 0 1px 3px;
+    border-style: solid;
+    border-color: #c7c6c6;
 }
 .money-pot:after{
-    content:'';
-    background-color: black;
+    content: '';
+    background-color: #fbfafa;
+    filter: blur(2.9px);
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 3;
-    transition: top 2.4s;
+    border-radius: 35% 35% 19% 19%;
+    transition: opacity 1.6s;
+    opacity: .9;
 }
 
 .money-pot.reveal-pot:after {
-    top: -355px;
+    opacity: 0;
+    /* top: -9999px; */
+}
+
+.money-pot.breaked {
+    width: 70%;
+    height: auto;
+    padding:30px;
+    margin-top: 100px;
+}
+.money-pot.breaked .coin, .money-pot.breaked .bill {
+    position: static;
+}
+
+.money-pot.breaked:before{
+    display: none;
 }
 
 .money-pot .coin, .money-pot .bill {
     position: absolute;
     bottom:0;
+    transition:  top position 2s;
 }
 
 .coins-wrapper{
