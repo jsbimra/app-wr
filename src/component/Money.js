@@ -1,10 +1,24 @@
+
 import React, { Component } from 'react';
 import $ from 'jquery';
+
+import coinSound from '../sounds/coin.mp3';
+import bottleBreakSound from '../sounds/glass_break_sms.mp3';
+import revealedSound from '../sounds/revealed.mp3';
 
 import './Money.css';
 
 function getRandomTop(max) {
     return Math.floor(Math.random() * Math.floor(max));
+}
+const getSoundTrack = (soundfile) => {
+    return new Promise( (resolve, reject) => {
+        const soundAvailable = new Audio(soundfile);
+        if(soundAvailable) 
+            resolve(soundAvailable)
+        else 
+            reject(soundAvailable)
+    });
 }
 const MoneyTray = (props) => {
     console.log(props);
@@ -76,17 +90,30 @@ class Money extends Component {
     breakPotKnowSavings() {
 
         this.calculateTotalSavings(this.state.collectMoney);
-
-        this.setState({
-            revealPotChecked: true,
-            breakedFlag: true
+        
+        getSoundTrack(bottleBreakSound).then( (sound) => {
+            sound.play();
         });
+        
+        setTimeout( ()=> {
+            this.setState({
+                revealPotChecked: true,
+                breakedFlag: true
+            });
+        }, 190);
     }
-    addToPot(money, event) {
+    addToPot(type, money, event) {
         const $elCoin = $(event.target);
         let $cloneCoinEl;
 
-        console.log('Clicked whichCoin ', money);
+        console.log('Clicked whichCoin ', type);
+
+        //play sound
+        if(type === 'coin' && getSoundTrack) {
+            getSoundTrack(coinSound).then( (sound) => {
+                sound.play();
+            })
+        }
 
         $elCoin.css({ top: `${getRandomTop(320)}px`, left: `${getRandomTop(240)}px` });
         $cloneCoinEl = $elCoin.clone(false);
@@ -104,17 +131,24 @@ class Money extends Component {
     onCoinClick(which, event) {
         if (which) {
             // console.log('Clicked which coin ', which);
-            this.addToPot(which, event);
+            this.addToPot('coin', which, event);
         }
     }
     onBillClick(which, event) {
         console.log(event);
         if (which) {
             // console.log('Clicked which bill ', which);
-            this.addToPot(which, event);
+            this.addToPot('bill', which, event);
         }
     }
     onRevealPotHandler() {
+        
+        if(!this.state.revealPotChecked) {
+            getSoundTrack(revealedSound).then( (sound) => {
+                sound.play();
+            });
+        }
+
         this.setState({
             revealPotChecked: !this.state.revealPotChecked
         });
@@ -156,7 +190,7 @@ class Money extends Component {
         const TotalSavings = () => {
             if (this.state.totalSavings) {
                 return (
-                    <div className="total-savings text-center">Your total saving till now: {this.state.totalSavings}</div>
+                    <div className="total-savings text-center">Your total saving till now <h4>{this.state.totalSavings}</h4></div>
                 )
             }
             return '';
