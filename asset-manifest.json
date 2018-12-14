@@ -1,7 +1,7 @@
 {
   "main.css": "/app-wr/static/css/main.48708792.chunk.css",
-  "main.js": "/app-wr/static/js/main.2c4d6b67.chunk.js",
-  "main.js.map": "/app-wr/static/js/main.2c4d6b67.chunk.js.map",
+  "main.js": "/app-wr/static/js/main.be486563.chunk.js",
+  "main.js.map": "/app-wr/static/js/main.be486563.chunk.js.map",
   "static/js/1.c5a40950.chunk.js": "/app-wr/static/js/1.c5a40950.chunk.js",
   "static/js/1.c5a40950.chunk.js.map": "/app-wr/static/js/1.c5a40950.chunk.js.map",
   "runtime~main.js": "/app-wr/static/js/runtime~main.a84d13f6.js",
@@ -11,6 +11,6 @@
   "static/media/revealed.mp3": "/app-wr/static/media/revealed.6821419b.mp3",
   "static/media/glass_break_sms.mp3": "/app-wr/static/media/glass_break_sms.bed9ba82.mp3",
   "index.html": "/app-wr/index.html",
-  "precache-manifest.98daa4a6cc5ae1102441b47742841cbd.js": "/app-wr/precache-manifest.98daa4a6cc5ae1102441b47742841cbd.js",
+  "precache-manifest.3545384fe6fcf20696a8ec251f2081bd.js": "/app-wr/precache-manifest.3545384fe6fcf20696a8ec251f2081bd.js",
   "service-worker.js": "/app-wr/service-worker.js"
 }
