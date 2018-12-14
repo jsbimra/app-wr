@@ -1,5 +1,7 @@
 .money-container {
     /* border: 1px solid red; */
+    position: relative;
+    min-height: 550px;
 }
 
 .money-container h4{
@@ -13,6 +15,53 @@
     clear: both;
 }
 
+.coins-wrapper, 
+.bills-wrapper{
+    width: 30%;
+}
+
+.coins-wrapper{
+    float: left;
+}
+
+.bills-wrapper{
+    float: right;
+    text-align: right;
+}
+
+.bill{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+    height: 20px;
+    background-color: rgb(0, 255, 106);
+    margin-left: 10px;
+    margin-top: 15px;
+    transition: margin-top;
+}
+
+.bills-wrapper .bill:hover {
+    animation: shakeBills .6s alternate;
+}
+.coin{
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: gold;
+    margin-right: 10px
+}
+
+.coins-wrapper .coin:hover {
+    animation: flipCoin .9s forwards;
+}
+
 .money-pot {
     clear: both;
     border-width: 0 1px 3px;
@@ -20,9 +69,13 @@
     border-color: #c7c6c6;
     width: 360px;
     height: 400px;
-    position: relative;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    right: auto;
     /* overflow: hidden; */
     margin: 60px auto;
+    margin-left: -180px;
     z-index: 2;
     border-radius: 35% 35% 20% 20%;
     box-shadow: 0px 10px 10px -5px rgba(189,187,189,1);
@@ -69,76 +122,42 @@
 
 .money-pot.breaked {
     width: 70%;
+    position: static;
     height: auto;
     padding:30px;
     margin-top: 100px;
-}
-.money-pot.breaked .coin, .money-pot.breaked .bill {
-    position: static;
-}
-
-.money-pot.breaked:before{
-    display: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .money-pot .coin, .money-pot .bill {
     position: absolute;
     bottom:0;
+    opacity: .3;
     transition:  top position 2s;
 }
 
-.coins-wrapper{
-    float: left;
+.money-pot.reveal-pot .coin, 
+.money-pot.reveal-pot .bill {
+    opacity: 1;
+}
+.money-pot.breaked .coin, 
+.money-pot.breaked .bill {
+    position: static;
+    opacity: 1;
+}
+.money-pot.breaked:after{
+    display: none;
+}
+.money-pot.breaked:before {
+    transform: rotate(196deg);
+    z-index: 55;
+    position: relative;
+    right: -316px;
+    left: auto;
+    text-align: right;
 }
 
-.bills-wrapper{
-    float: right;
-}
-
-.bill{
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    width: 50px;
-    height: 20px;
-    background-color: rgb(0, 255, 106);
-    margin-left: 10px;
-    margin-top: 15px;
-    transition: margin-top;
-}
-
-.bills-wrapper .bill:hover {
-    animation: shakeBills .6s alternate;
-}
-
-@-webkit-keyframes shakeBills {
-    0%   { margin-top: 15px;}
-    50%  { margin-top: 12px;}
-    100% { margin-top: 10px;}
-}
-@keyframes shakeBills {
-    0%   { margin-top: 15px;}
-    50%  { margin-top: 12px;}
-    100% { margin-top: 10px;}
-}   
-
-.coin{
-    cursor: pointer;
-    display: inline-block;
-    text-align: center;
-    line-height: 35px;
-    vertical-align: middle;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: gold;
-    margin-right: 10px
-}
-
-.coins-wrapper .coin:hover {
-    animation: flipCoin .9s forwards;
-}
 
 @-webkit-keyframes flipCoin {
     0%   { transform: rotateY(0deg);}
@@ -149,4 +168,15 @@
     0%   { transform: rotateY(0deg);}
     50%  { transform: rotateY(180deg);}
     100% { transform: rotateY(360deg);}
+}   
+
+@-webkit-keyframes shakeBills {
+    0%   { margin-top: 15px;}
+    50%  { margin-top: 12px;}
+    100% { margin-top: 10px;}
+}
+@keyframes shakeBills {
+    0%   { margin-top: 15px;}
+    50%  { margin-top: 12px;}
+    100% { margin-top: 10px;}
 }   

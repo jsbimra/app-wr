@@ -55,7 +55,7 @@ class Money extends Component {
         })
     }
     componentWillUnMount() {
-        
+
     }
     calculateTotalSavings(collectMoney) {
         console.clear();
@@ -119,7 +119,9 @@ class Money extends Component {
             revealPotChecked: !this.state.revealPotChecked
         });
     }
-    onReBuildSavings(){
+    onReBuildSavings() {
+        console.log('test');
+
         this.setState({
             breakedFlag: false,
             revealPotChecked: false,
@@ -129,10 +131,10 @@ class Money extends Component {
         $('.money-pot').html('');
     }
     render() {
-        const RevealPot = (props) => {
+        const RevealPotAction = (props) => {
             if (this.state.collectMoney.length) {
                 return (
-                    <label className="float-left">
+                    <label>
                         <input type="checkbox" checked={this.state.revealPotChecked}
                             name="chkRevealPot"
                             value={this.state.revealPotChecked}
@@ -140,11 +142,11 @@ class Money extends Component {
             }
             return '';
         }
-        const BreakButton = () => {
+        const BreakButtonAction = () => {
             if (!this.state.breakedFlag) {
                 if (this.state.collectMoney.length) {
                     return (
-                        <label className="float-right">You want to break your pot ?  <button className=" btn-small" onClick={this.breakPotKnowSavings}>Break Now</button>
+                        <label className="text-right">You want to know you savings ?<br />  <button className=" btn-small" onClick={this.breakPotKnowSavings}>Break Now</button>
                         </label>)
                 }
             }
@@ -159,8 +161,8 @@ class Money extends Component {
             }
             return '';
         }
-        
-        const ReBuildSavings = () => {
+
+        const ReBuildSavingsAction = () => {
             if (this.state.totalSavings) {
                 return (
                     <div className="rebuild-savings text-center">
@@ -170,7 +172,7 @@ class Money extends Component {
             }
             return '';
         }
-        
+
         const layTray = () => {
             if (!this.state.breakedFlag) {
                 return (
@@ -181,8 +183,10 @@ class Money extends Component {
                             onCoinClick={this.onCoinClick}
                             onBillClick={this.onBillClick} />
 
-                        <RevealPot />
-                        <BreakButton />
+                        <div className="float-right text-right">
+                            <RevealPotAction />
+                            <BreakButtonAction />
+                        </div>
                     </div>
                 )
             } else {
@@ -199,7 +203,7 @@ class Money extends Component {
                 <h1>Your daily money saver</h1>
                 {layTray()}
                 <MoneyPot takeMoney="0" revealPotFlag={this.state.revealPotChecked} breakedFlag={this.state.breakedFlag} />
-                <ReBuildSavings />
+                <ReBuildSavingsAction />
             </div>
         )
     }
