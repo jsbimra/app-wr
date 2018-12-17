@@ -32,8 +32,11 @@
       display: inline-block;
       line-height: normal;
       padding: 4px 8px;
-      background-color: rgb(85, 85, 85);
-      color: rgb(255, 255, 255);
+      background-color: #ffd900;
+      color: rgb(95, 89, 3);
+      
+      animation: socialNameAnimation 7s linear forwards;
+        
     }
     .social-block:after{
         content: '';
@@ -47,12 +50,48 @@
         height: 200px;
         border-radius: 50%;        
         box-sizing: border-box;
-        border: 25px dashed #eccb11;
+        border: 5px dashed #eccb11;
         /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-        animation: wheelSpinAnimate 6s infinite forwards;
+        animation: wheelSpinAnimate 50s infinite forwards;
     } 
     .social-delete-link {
+      color: #eccb11;
+      font-size: 16px;
       position: absolute;
       top: 23px;
       right: 35px;
     }
+    .social-delete-link:hover {
+      text-decoration: none;
+    }
+    
+    .wheel-animate {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: wheelSpinAnimate 100s infinite forwards;
+    }
+    @-webkit-keyframes wheelSpinAnimate {
+      0%   { transform: rotateZ(0deg); border-color:#eccb11;}
+      50%  { transform: rotateZ(180deg);  border-color:#b89808;}
+      100% { transform: rotateZ(360deg); border-color:#ffd900; }
+    }
+    @keyframes wheelSpinAnimate {
+      0%   { transform: rotateZ(0deg); border-color:#eccb11;}
+      50%  { transform: rotateZ(180deg);  border-color:#b89808;}
+      100% { transform: rotateZ(360deg); border-color:#ffd900; }
+    }   
+  
+  
+    .animate-social-name {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation: socialNameAnimation 6s infinite forwards;
+    }
+    @-webkit-keyframes socialNameAnimation {
+      0%   { transform: scale(1.3)}
+      50%  { transform: scale(0.9)}
+      100% { transform: scale(1.1)}
+    }
+    @keyframes socialNameAnimation {
+      0%   { transform: scale(1.3)}
+      50%  { transform: scale(0.9)}
+      100% { transform: scale(1.1)}
+    }   

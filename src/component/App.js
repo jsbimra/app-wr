@@ -14,12 +14,10 @@ class App extends Component {
     render() {
         return (
             <Router>
-
                 <div className="App">
                     <Header slogan={headerData.slogan} logo={headerData.logo}></Header>
                     <AppBody />
                     <Footer note="Thank you for visit." copyright="App's all right reserved with its Author."></Footer>
-
                 </div>
             </Router>
         )

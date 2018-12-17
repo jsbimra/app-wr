@@ -1,0 +1,28 @@
+.keyWrapper{
+    width: 50%;   
+    margin: auto;
+    font-size: 14px;
+}
+
+.keyWrapper .key{
+    display: inline-block;
+    text-transform: capitalize;
+    width: 60px;
+    height: 60px;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align: center; 
+    margin: 10px;
+    border: 4px solid mediumseagreen;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgba(rgb(41, 41, 38), rgb(58, 58, 58), rgb(35, 35, 36), .8);
+    transition: all 0.07s;
+}
+
+.keyWrapper .playing{
+    background-color: maroon;
+    color: #fff;
+    transform: scale(1.1);
+    border-color: yellowgreen
+}

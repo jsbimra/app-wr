@@ -720,7 +720,43 @@ font-family: 'Concert One', cursive;
     }
     .nav-list li{
         display: inline-block;
-        margin-left: 20px;  
+        /* margin-left: 20px;   */
+        position: relative;
+        padding: 2px 6px;
+
+    }
+    .nav-list li:hover {
+      background-color: #1fe27a;
+    }
+    .nav-list li:hover a {
+      color: #fff;
+    }
+    .nav-list li:hover .sub-nav-list{
+        transition: all 0.8s;
+        display: block;
+    }
+
+    .sub-nav-list{
+      display: none;
+      position: absolute;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      top: 26px;
+      right: 0px;
+    }
+    .sub-nav-list li{
+      display: block;
+      margin:0;
+      padding: 2px 6px;
+      width: 100%;
+    }
+    .sub-nav-list li, .sub-nav-list li:hover {
+      background-color: #8fffc3;
+    }
+    .sub-nav-list li:hover a {
+      color: rgb(61, 61, 61);
     }
     .footer {
       background: #fafbfb;
@@ -729,18 +765,3 @@ font-family: 'Concert One', cursive;
       padding: 20px;
       min-height: 30px;
     }
-
-    .wheel-animate {
-      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-      animation: wheelSpinAnimate 6s infinite forwards;
-    }
-    @-webkit-keyframes wheelSpinAnimate {
-      0%   { transform: rotateZ(0deg); border-color:#eccb11;}
-      50%  { transform: rotateZ(180deg);  border-color:#0837b8;}
-      100% { transform: rotateZ(360deg); border-color:#76aa16; }
-    }
-    @keyframes wheelSpinAnimate {
-      0%   { transform: rotateZ(0deg); border-color:#eccb11;}
-      50%  { transform: rotateZ(180deg); border-color:#0837b8; }
-      100% { transform: rotateZ(360deg); border-color:#76aa16; }
-    }   
