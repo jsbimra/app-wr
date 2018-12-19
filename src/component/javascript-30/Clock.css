@@ -1,0 +1,32 @@
+/* Clock.css */
+
+.clock-face{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    border: 10px solid #bbbbbb;
+    background-color: aqua;
+    position: relative;
+}
+
+.hand{
+    width: 50%;
+    height: 4px;
+    position: absolute;
+    top:50%;
+    background: #000;
+
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+
+    transform: rotate(90deg);
+    transform-origin: 100%;
+
+}
+
+.seconds-hand{
+    height: 2px;
+}
+.mins-hand{
+    height: 4px;
+}

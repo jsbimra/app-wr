@@ -52,7 +52,7 @@ class DrumHits extends Component {
         })
     }
     playsound(e) {
-        console.log(e);
+        // console.log(e);
         // Bind keydown event 
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
@@ -76,7 +76,7 @@ class DrumHits extends Component {
     render() {
 
         return (
-            <div className="keyWrapper">
+            <div className="js30-wrapper">
                 {this.buildKeysOnScreen()}
             </div>
         )

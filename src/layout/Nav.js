@@ -26,6 +26,14 @@ const NavList = [
             {
                 title: 'Clock',
                 routerLink: '/javascript-30/clock'
+            },
+            {
+                title: 'Update CSS Variable',
+                routerLink: '/javascript-30/updatecssvar'
+            },
+            {
+                title: 'Array Cardio',
+                routerLink: '/javascript-30/arraycardio'
             }
         ]
     }

@@ -1,0 +1,28 @@
+/* UpdateCSSVarable.css */
+
+:root{
+    --base: rgb(31, 228, 113);
+    --spacing: 10px;
+    --blur: 4px;
+}
+
+.updatecssvar-wrapper{      
+    margin: 0 auto;
+    width: 650px;
+    /* height: 600px; */
+    border: 2px solid var(--base);
+    padding: var(--spacing);
+    
+    overflow: hidden;
+}
+.updatecssvar-wrapper > video{
+    max-width: 100%;
+    padding: var(--spacing);
+    background-color: var(--base);
+    filter: blur(var(--blur));
+}
+
+.hl{
+    color: var(--base);
+
+}

@@ -701,7 +701,6 @@ font-family: 'Concert One', cursive;
     }
     .header{
       background: #fafbfb;
-      overflow: hidden;
       padding: 20px;
     }
     .header a{
@@ -765,3 +764,9 @@ font-family: 'Concert One', cursive;
       padding: 20px;
       min-height: 30px;
     }
+    
+    .js30-wrapper{
+      width: 70%;   
+      margin: 40px auto;
+      font-size: 14px;
+  }

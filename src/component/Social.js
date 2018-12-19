@@ -16,7 +16,7 @@ const SocialBlock = (props) => {
         if(value) {
             return (
                 <div className="relative float-left " key={index} >
-                    <a href="#" className="social-delete-link" onClick={()=> {props.onDelete(value)} }>x</a>
+                    <a href className="social-delete-link" onClick={()=> {props.onDelete(value)} }>x</a>
                     
                     <Link to="/social" className={`float-left social-block ${'social-block-' + value.toLowerCase()}`}>
                         <span>{value}</span>
@@ -24,6 +24,7 @@ const SocialBlock = (props) => {
                 </div>
             )
         }
+        return '';
     });
 }
 class Social extends Component {

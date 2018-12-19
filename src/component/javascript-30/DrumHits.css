@@ -1,10 +1,6 @@
-.keyWrapper{
-    width: 50%;   
-    margin: auto;
-    font-size: 14px;
-}
 
-.keyWrapper .key{
+
+.key{
     display: inline-block;
     text-transform: capitalize;
     width: 60px;
@@ -20,7 +16,7 @@
     transition: all 0.07s;
 }
 
-.keyWrapper .playing{
+.playing{
     background-color: maroon;
     color: #fff;
     transform: scale(1.1);
