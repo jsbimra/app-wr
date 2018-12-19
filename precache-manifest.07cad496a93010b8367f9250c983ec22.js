@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/app-wr/static/media/revealed.6821419b.mp3"
   },
   {
-    "revision": "c22b1867539078a6164f",
-    "url": "/app-wr/static/css/main.844aebf3.chunk.css"
+    "revision": "f7fd6652e43463f31cb5",
+    "url": "/app-wr/static/css/main.c22ef2c9.chunk.css"
   },
   {
-    "revision": "f2d420b4b4689a08c676",
-    "url": "/app-wr/static/js/1.f2d420b4.chunk.js"
+    "revision": "ffa9df3387681ffa8b94",
+    "url": "/app-wr/static/js/1.ffa9df33.chunk.js"
   },
   {
     "revision": "a84d13f63453bc8908ac",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/app-wr/static/media/glass_break_sms.bed9ba82.mp3"
   },
   {
-    "revision": "c22b1867539078a6164f",
-    "url": "/app-wr/static/js/main.c22b1867.chunk.js"
+    "revision": "f7fd6652e43463f31cb5",
+    "url": "/app-wr/static/js/main.f7fd6652.chunk.js"
   },
   {
     "revision": "550be808a1e25f5b4db6b66350270316",
@@ -48,7 +48,7 @@ self.__precacheManifest = [
     "url": "/app-wr/static/media/openhat.a62db465.wav"
   },
   {
-    "revision": "8ef7991ec1e2df60d76e7aa4e536e14a",
+    "revision": "a10da0f1cfc0d35c9d24d7a7bd6b19e2",
     "url": "/app-wr/index.html"
   }
 ];
